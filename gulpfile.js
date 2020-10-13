@@ -127,9 +127,15 @@ gulp.task('clean', () => {
   return del(paths.clean);
 });
 
-gulp.task('deploy', function () {
+gulp.task('build', gulp.series('html', 'js', 'css', 'fonts', 'json', 'images'));
+gulp.task('_default', gulp.series('clean', 'build', 'webserver'));
+
+gulp.task('ghPages', () => {
   return gulp.src('./build/**/*').pipe(ghPages());
 });
 
-gulp.task('build', gulp.series('html', 'js', 'css', 'fonts', 'json', 'images'));
-gulp.task('_default', gulp.series('clean', 'build', 'webserver'));
+gulp.task('cleanGhPagesCache', () => {
+  return del('./.publish');
+});
+
+gulp.task('deploy', gulp.series('ghPages', 'cleanGhPagesCache'));
