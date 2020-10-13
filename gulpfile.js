@@ -102,6 +102,10 @@ gulp.task('fonts', () => {
   return gulp.src(paths.src.fonts).pipe(changed(paths.build.fonts)).pipe(gulp.dest(paths.build.fonts));
 });
 
+gulp.task('json', () => {
+  return gulp.src('src/js/news.json').pipe(changed(paths.build.js)).pipe(gulp.dest(paths.build.js));
+});
+
 gulp.task('webserver', () => {
   browserSync.init({
     server: {
@@ -127,5 +131,5 @@ gulp.task('deploy', function () {
   return gulp.src('./build/**/*').pipe(ghPages());
 });
 
-gulp.task('build', gulp.series('html', 'js', 'css', 'fonts', 'images'));
+gulp.task('build', gulp.series('html', 'js', 'css', 'fonts', 'json', 'images'));
 gulp.task('_default', gulp.series('clean', 'build', 'webserver'));
