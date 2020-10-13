@@ -1,0 +1,53 @@
+.blockquote {
+  position: relative;
+  max-width: 570px;
+  margin: 58px 0 48px;
+  padding: 0 0 0 38px;
+
+  @include media('huge') {
+    max-width: 530px;
+  }
+
+  @include media('large') {
+    max-width: 600px;
+  }
+
+  @include media('small') {
+    margin-top: 48px;
+    margin-bottom: 38px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 19px;
+    height: 15px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 19 15'%3E%3Cpath fill='%2301576C' d='M1 14V9.41h6V14H1z'/%3E%3Cpath stroke='%2301576C' stroke-width='2' d='M1 9.41V14h6V9.41H1zm0 0L5.5 1'/%3E%3Cpath fill='%2301576C' d='M12 14V9.41h6V14h-6z'/%3E%3Cpath fill='%2301576C' d='M12 9.41l-.88-.47-.12.22v.25h1zM12 14h-1v1h1v-1zm6 0v1h1v-1h-1zm0-4.59h1v-1h-1v1zm-7 0V14h2V9.41h-2zM12 15h6v-2h-6v2zm7-1V9.41h-2V14h2zm-1-5.59h-6v2h6v-2zm-5.12 1.47l4.5-8.4-1.76-.95-4.5 8.41 1.76.94z'/%3E%3C/svg%3E");
+  }
+
+  p {
+    margin: 0 0 25px;
+  }
+}
+
+.blockquote__author {
+  font-style: normal;
+}
+
+.blockquote__author-name {
+  display: block;
+  font-weight: 600;
+
+  @include media('small') {
+    margin-bottom: 3px;
+  }
+}
+
+.blockquote__author-about {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}

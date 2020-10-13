@@ -1,0 +1,24 @@
+@import 'vendor/normalize';
+@import 'vendor/swiper';
+
+@import 'mixins';
+@import 'variables';
+
+@import 'fonts';
+@import 'general';
+
+@import 'blocks/select';
+
+@import 'blocks/header';
+@import 'blocks/main-nav';
+
+@import 'blocks/about';
+@import 'blocks/page-nav';
+@import 'blocks/slider';
+@import 'blocks/blockquote';
+@import 'blocks/features';
+@import 'blocks/card';
+@import 'blocks/news';
+@import 'blocks/more';
+
+@import 'blocks/footer';
