@@ -7,6 +7,7 @@ let concat = require('gulp-concat');
 var csso = require('gulp-csso');
 let del = require('del');
 let gcmq = require('gulp-group-css-media-queries');
+let ghPages = require('gulp-gh-pages');
 let imagemin = require('gulp-imagemin');
 let imageminPngquant = require('imagemin-pngquant');
 let imageminMozjpeg = require('imagemin-mozjpeg');
@@ -120,6 +121,10 @@ gulp.task('webserver', () => {
 
 gulp.task('clean', () => {
   return del(paths.clean);
+});
+
+gulp.task('deploy', function () {
+  return gulp.src('./build/**/*').pipe(ghPages());
 });
 
 gulp.task('build', gulp.series('html', 'js', 'css', 'fonts', 'images'));
