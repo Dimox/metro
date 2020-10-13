@@ -26,20 +26,6 @@
     },
     speed: 500,
     loop: true,
-    /* breakpoints: {
-  // 480: {
-  //   slidesPerView: 1,
-  // },
-  // 768: {
-  //   slidesPerView: 2,
-  // },
-  // 1024: {
-  //   slidesPerView: 3,
-  // },
-  // 1360: {
-  //   slidesPerView: 4,
-  // },
-  }, */
     grabCursor: true,
     simulateTouch: true,
     a11y: {
